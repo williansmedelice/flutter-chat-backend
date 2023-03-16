@@ -29,7 +29,7 @@ router.post(
   login
 );
 
-//Rura para renovar token *validateJWT*
+//Ruta para renovar token *validateJWT*
 router.get("/renew", validateJWT, renewToken);
 
 module.exports = router;
