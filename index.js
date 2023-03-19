@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 
 // Morgan
-app.use(morgan('combined'))
+app.use(morgan("combined"));
 
 // Node Server
 const server = require("http").createServer(app);
@@ -26,6 +26,8 @@ app.use(express.static(publicPath));
 
 // Mis Rutas
 app.use("/api/login", require("./routes/auth"));
+app.use("/api/users", require("./routes/users"));
+app.use("/api/messages", require("./routes/messages"));
 
 server.listen(process.env.PORT, (err) => {
   if (err) throw new Error(err);
